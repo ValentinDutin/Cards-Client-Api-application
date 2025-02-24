@@ -64,7 +64,7 @@ namespace CardsClient.ViewModels
         {
             try
             {
-                var item = new Card() { Description = InputDescription, ImgPath = SelectedImgPath };
+                var item = new Card(InputDescription, SelectedImgPath);
                 await _apiService.PostCardAsync(item);
                 CardsCollection.Clear();
                 LoadData();

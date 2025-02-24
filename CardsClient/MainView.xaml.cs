@@ -29,8 +29,10 @@ namespace CardsClient
         }
         private void SelectImg_Click(object sender, RoutedEventArgs e)
         {
-            var openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files|*.jpg;*jpeg;*png;*bmp";
+            var openFileDialog = new OpenFileDialog
+            {
+                Filter = "Image Files|*.jpg;*jpeg;*png;*bmp"
+            };
             if (openFileDialog.ShowDialog() == true)
             {
                 var viewModel = (MainVM)DataContext;

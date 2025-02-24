@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 var app = builder.Build();
-List<Card> cards = new List<Card>();
+List<Card> cards = [];
 string storagePath = Path.Combine(Directory.GetCurrentDirectory(), "Cards");
 
 // Configure the HTTP request pipeline.

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Common.Models
-{
+{   
     public class Card
     {
         private string _description;

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardsApi", "CardsApi\CardsA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardsClient", "CardsClient\CardsClient.csproj", "{2A4CF05A-C05C-4D9B-A104-2CC6DDE0E8DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardsApiWithControllers", "CardsApiWithControllers\CardsApiWithControllers.csproj", "{5E16B2BE-871B-469E-B3C7-4F67A284258E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2A4CF05A-C05C-4D9B-A104-2CC6DDE0E8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A4CF05A-C05C-4D9B-A104-2CC6DDE0E8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A4CF05A-C05C-4D9B-A104-2CC6DDE0E8DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E16B2BE-871B-469E-B3C7-4F67A284258E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E16B2BE-871B-469E-B3C7-4F67A284258E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E16B2BE-871B-469E-B3C7-4F67A284258E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E16B2BE-871B-469E-B3C7-4F67A284258E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

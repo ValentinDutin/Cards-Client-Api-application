@@ -1,23 +1,24 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
-//using CardsClient.Commands;
 using CardsClient.Services;
 using Common.Models;
 using System;
 using System.Threading.Tasks;
-//using CommunityToolkit.Mvvm;
 using CommunityToolkit.Mvvm.Input;
+using System.IO;
 
 namespace CardsClient.ViewModels
 {
     public class MainVM : BaseVM
     {
-        private readonly ApiService _apiService;
+        private readonly ApiController _apiService;
         private string _description;
         private string _imgPath;
+        private string _initImgPath;
+        private ICommand LoadDataCommand { get; } 
         public ObservableCollection<Card> CardsCollection { get; private set; }
         public ICommand SubmitCommand { get; set; }
-        public ICommand LoadDataCommand { get; set; }
+        
         public string InputDescription
         {
             get
@@ -42,9 +43,10 @@ namespace CardsClient.ViewModels
                 OnPropertyChanged();
             }
         }
-        public MainVM()
+        public MainVM() 
         {
-            _apiService = new ApiService();
+            _apiService = new ApiController();
+            _initImgPath = "\\Icons\\InitIcon.png";
             CardsCollection = new ObservableCollection<Card>();
             SubmitCommand = new AsyncRelayCommand(Submit);
             LoadDataCommand = new AsyncRelayCommand(LoadData);
@@ -57,7 +59,7 @@ namespace CardsClient.ViewModels
                 var list = await _apiService.GetCardsAsync();
                 foreach (var item in list)
                 {
-                    CardsCollection.Add(item);
+                    CardsCollection.Add(new Card(item.Description, File.Exists(item.ImgPath) ? item.ImgPath : _initImgPath));
                 }
             }
             catch (Exception ex)

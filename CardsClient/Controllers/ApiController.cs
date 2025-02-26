@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
-using System;
 using Common.Models;
 
 
 namespace CardsClient.Services
 {
-    public class ApiService
+    public class ApiController
     {
         private readonly HttpClient _httpClient;
-        public ApiService()
+        public ApiController()
         {
             _httpClient = new HttpClient();
         }

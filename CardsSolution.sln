@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{62246C13-6178-4D54-AEC2-BCFA0A47C607}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardsApi", "CardsApi\CardsApi.csproj", "{5C1F5063-531C-4393-8202-03CE693C63EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardsClient", "CardsClient\CardsClient.csproj", "{2A4CF05A-C05C-4D9B-A104-2CC6DDE0E8DF}"
 EndProject
@@ -21,10 +19,6 @@ Global
 		{62246C13-6178-4D54-AEC2-BCFA0A47C607}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62246C13-6178-4D54-AEC2-BCFA0A47C607}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62246C13-6178-4D54-AEC2-BCFA0A47C607}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C1F5063-531C-4393-8202-03CE693C63EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C1F5063-531C-4393-8202-03CE693C63EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C1F5063-531C-4393-8202-03CE693C63EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C1F5063-531C-4393-8202-03CE693C63EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2A4CF05A-C05C-4D9B-A104-2CC6DDE0E8DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2A4CF05A-C05C-4D9B-A104-2CC6DDE0E8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A4CF05A-C05C-4D9B-A104-2CC6DDE0E8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU

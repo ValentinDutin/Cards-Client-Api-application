@@ -1,19 +1,23 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
-using CardsClient.Commands;
+//using CardsClient.Commands;
 using CardsClient.Services;
 using Common.Models;
 using System;
+using System.Threading.Tasks;
+//using CommunityToolkit.Mvvm;
+using CommunityToolkit.Mvvm.Input;
 
 namespace CardsClient.ViewModels
 {
     public class MainVM : BaseVM
     {
         private readonly ApiService _apiService;
-        public ObservableCollection<Card> CardsCollection { get; private set; }
-        public ICommand SubmitCommand { get; set; }
         private string _description;
         private string _imgPath;
+        public ObservableCollection<Card> CardsCollection { get; private set; }
+        public ICommand SubmitCommand { get; set; }
+        public ICommand LoadDataCommand { get; set; }
         public string InputDescription
         {
             get
@@ -42,10 +46,11 @@ namespace CardsClient.ViewModels
         {
             _apiService = new ApiService();
             CardsCollection = new ObservableCollection<Card>();
-            SubmitCommand = new RelayCommand(o => Submit());
-            LoadData();
+            SubmitCommand = new AsyncRelayCommand(Submit);
+            LoadDataCommand = new AsyncRelayCommand(LoadData);
+            LoadDataCommand.Execute(this);
         }
-        private async void LoadData()
+        private async Task LoadData()
         {
             try
             {
@@ -60,14 +65,14 @@ namespace CardsClient.ViewModels
                 Console.WriteLine(ex.Message);
             }
         }
-        private async void Submit()
+        private async Task Submit()
         {
             try
             {
                 var item = new Card(InputDescription, SelectedImgPath);
                 await _apiService.PostCardAsync(item);
                 CardsCollection.Clear();
-                LoadData();
+                await LoadData();
             }
             catch (Exception ex)
             {

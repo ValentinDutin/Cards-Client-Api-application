@@ -1,6 +1,0 @@
-@CardsApiWithControllers_HostAddress = http://localhost:5110
-
-GET {{CardsApiWithControllers_HostAddress}}/api/cards/
-Accept: application/json
-
-###

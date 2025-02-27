@@ -27,7 +27,7 @@ namespace CardsApiWithControllers.Controllers
 
         // POST: /cards
         [HttpPost]
-        public ActionResult Add(Card item)
+        public IActionResult Add(Card item)
         {
             if (_dbService.InsertCard(item))
             {
@@ -39,3 +39,4 @@ namespace CardsApiWithControllers.Controllers
         }
     }
 }
+    

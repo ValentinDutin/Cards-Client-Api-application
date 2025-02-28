@@ -8,12 +8,13 @@ using CommunityToolkit.Mvvm.Input;
 using System.IO;
 using System.Linq;
 using System.Windows.Navigation;
+using System.Configuration;
 
 namespace CardsClient.ViewModels
 {
     public class MainVM : BaseVM
     {
-        private const string _initImgPath = "\\Icons\\InitIcon.png";
+        private readonly string _initImgPath;
         private readonly ApiController _apiService;
         private string _description;
         private string _imgPath;
@@ -53,6 +54,7 @@ namespace CardsClient.ViewModels
         }
         public MainVM() 
         {
+            _initImgPath = ConfigurationManager.AppSettings["InitImagePath"].ToString() ?? "\\Icons\\InitIcon.png";
             _apiService = new ApiController();
             CardsCollection = new ObservableCollection<Card>();
             SubmitCommand = new AsyncRelayCommand(Submit);

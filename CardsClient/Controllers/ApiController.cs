@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using Common.Models;
 using System;
-using static System.Net.WebRequestMethods;
+using System.Configuration;
 
 
 namespace CardsClient.Services
@@ -13,29 +13,30 @@ namespace CardsClient.Services
     public class ApiController
     {
         private readonly HttpClient _httpClient;
-        private const string url = "http://localhost:5110/api/cards";
+        private readonly string _url;
         public ApiController()
         {
             _httpClient = new HttpClient();
+            _url = ConfigurationManager.AppSettings["StartUpHttpUrl"].ToString() ?? "http://localhost:5110/api/cards";
         }
         public async Task PostCardAsync(Card model)
         {
             var json = JsonConvert.SerializeObject(model);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-            await _httpClient.PostAsync(url, httpContent);
+            await _httpClient.PostAsync(_url, httpContent);
         }
         public async Task<List<Card>> GetCardsAsync()
         {
-            var response = await _httpClient.GetStringAsync(url);
+            var response = await _httpClient.GetStringAsync(_url);
             return JsonConvert.DeserializeObject<List<Card>>(response);
         }
         public async Task DeleteCardByIdAsync(Guid id)
         {
-            await _httpClient.DeleteAsync(url + '/' + id);
+            await _httpClient.DeleteAsync(_url + '/' + id);
         }
         public async Task DeleteAllCards()
         {
-            await _httpClient.DeleteAsync(url);
+            await _httpClient.DeleteAsync(_url);
         }
     }
 }

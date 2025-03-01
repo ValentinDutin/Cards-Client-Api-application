@@ -8,7 +8,7 @@ using System;
 using System.Configuration;
 
 
-namespace CardsClient.Services
+namespace CardsClient.Controllers
 {
     public class ApiController
     {
@@ -34,7 +34,7 @@ namespace CardsClient.Services
         {
             await _httpClient.DeleteAsync(_url + '/' + id);
         }
-        public async Task DeleteAllCards()
+        public async Task DeleteAllCardsAsync()
         {
             await _httpClient.DeleteAsync(_url);
         }

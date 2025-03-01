@@ -1,5 +1,4 @@
 ﻿using Common.Models;
-using System.IO;
 using System.Text.Json;
 
 namespace CardsServer.Data
@@ -8,7 +7,6 @@ namespace CardsServer.Data
     {
         private readonly string _directoryName = "../DB";
         private readonly string _filePath = "Cards.json";
-
         public CardsRepository()
         {
             _filePath = Path.Combine(_directoryName, _filePath);
@@ -60,7 +58,6 @@ namespace CardsServer.Data
             }
             return false;
         }
-
         public async Task DeleteAllCards()
         {
             try

@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
-using CardsClient.Services;
+using CardsClient.Controllers;
 using Common.Models;
 using System;
 using System.Threading.Tasks;
@@ -15,7 +15,7 @@ namespace CardsClient.ViewModels
     public class MainVM : BaseVM
     {
         private readonly string _initImgPath;
-        private readonly ApiController _apiService;
+        private readonly ApiController _apiController;
         private string _description;
         private string _imgPath;
         private Card _selectedItem;
@@ -55,7 +55,7 @@ namespace CardsClient.ViewModels
         public MainVM() 
         {
             _initImgPath = ConfigurationManager.AppSettings["InitImagePath"].ToString() ?? "\\Icons\\InitIcon.png";
-            _apiService = new ApiController();
+            _apiController = new ApiController();
             CardsCollection = new ObservableCollection<Card>();
             SubmitCommand = new AsyncRelayCommand(Submit);
             LoadDataCommand = new AsyncRelayCommand(LoadData);
@@ -67,7 +67,7 @@ namespace CardsClient.ViewModels
         {
             try
             {
-                var list = await _apiService.GetCardsAsync();
+                var list = await _apiController.GetCardsAsync();
                 foreach (var item in list)
                 {
                     CardsCollection.Add(new Card(item.Id, item.Description, File.Exists(item.ImgPath) ? item.ImgPath : _initImgPath));
@@ -85,7 +85,7 @@ namespace CardsClient.ViewModels
                 if (String.IsNullOrEmpty(SelectedImgPath) && String.IsNullOrEmpty(InputDescription))
                     return;
                 var item = Card.CreateCard(InputDescription, SelectedImgPath);
-                await _apiService.PostCardAsync(item);
+                await _apiController.PostCardAsync(item);
                 CardsCollection.Clear();
                 await LoadData();
             }
@@ -100,7 +100,7 @@ namespace CardsClient.ViewModels
             {                
                 if(SelectedItem == null)
                 {  return; }
-                await _apiService.DeleteCardByIdAsync(SelectedItem.Id);
+                await _apiController.DeleteCardByIdAsync(SelectedItem.Id);
                 CardsCollection.Clear();
                 await LoadData();
             }
@@ -111,7 +111,7 @@ namespace CardsClient.ViewModels
         }
         private async Task DeleteAllCards()
         {
-            await _apiService.DeleteAllCards();
+            await _apiController.DeleteAllCardsAsync();
             CardsCollection.Clear();
         }
     }

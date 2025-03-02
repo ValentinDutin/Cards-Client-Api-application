@@ -1,12 +1,10 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 using System.Net.Http;
 using Common.Models;
-using System;
 using System.Configuration;
-
+using System.Text.Json;
+using System.Diagnostics;
 
 namespace CardsClient.Controllers
 {
@@ -14,13 +12,18 @@ namespace CardsClient.Controllers
     {
         private readonly HttpClient _httpClient;
         private readonly string _url;
+        //private static HttpClient _httpClient = new()
+        //{
+        //    BaseAddress = new Uri(ConfigurationManager.AppSettings["StartUpHttpUrl"].ToString() ?? "http://localhost:5110/api/cards"),
+        //};
         public ApiController()
         {
             _httpClient = new HttpClient();
-            _url = ConfigurationManager.AppSettings["StartUpHttpUrl"].ToString() ?? "http://localhost:5110/api/cards";
+            _url = /*ConfigurationManager.AppSettings["StartUpHttpUrl"].ToString() ??*/ "http://localhost:5110/api/cards";
         }
         public async Task PostCardAsync(Card model)
         {
+            //var json = JsonSerializer.Serialize(model);
             var json = JsonConvert.SerializeObject(model);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
             await _httpClient.PostAsync(_url, httpContent);
@@ -28,6 +31,7 @@ namespace CardsClient.Controllers
         public async Task<List<Card>> GetCardsAsync()
         {
             var response = await _httpClient.GetStringAsync(_url);
+            Debug.WriteLine(response);
             return JsonConvert.DeserializeObject<List<Card>>(response);
         }
         public async Task DeleteCardByIdAsync(Guid id)

@@ -14,7 +14,7 @@ namespace CardsServer.Api.Controllers
     public class CardsController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private ILogger<CardsController> _logger;
+        private readonly ILogger<CardsController> _logger;
         public CardsController(IMediator mediator, ILogger<CardsController> logger)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));

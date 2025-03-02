@@ -20,21 +20,36 @@ namespace CardsClient.Services
         {
             var json = JsonConvert.SerializeObject(model);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-            await _httpClient.PostAsync(_url, httpContent);
+            using HttpResponseMessage response = await _httpClient.PostAsync(_url, httpContent);
+            if (response.IsSuccessStatusCode)
+                Debug.WriteLine("PostCardsAsync : Successed");
+            else
+                Debug.WriteLine($"PostCardsAsync : {response.StatusCode}");
         }
         public async Task<List<Card>> GetCardsAsync()
         {
-            var response = await _httpClient.GetStringAsync(_url);
-            Debug.WriteLine(response);
-            return JsonConvert.DeserializeObject<List<Card>>(response) ?? [];
+            using HttpResponseMessage response = await _httpClient.GetAsync(_url);
+            if (response.IsSuccessStatusCode)
+                Debug.WriteLine("GetCardsAsync : Successed");
+            else
+                Debug.WriteLine($"GetCardsAsync : {response.StatusCode}");
+            return JsonConvert.DeserializeObject<List<Card>>(await response.Content.ReadAsStringAsync()) ?? [];
         }
         public async Task DeleteCardByIdAsync(Guid id)
         {
-            await _httpClient.DeleteAsync(_url + '/' + id);
+            using HttpResponseMessage response = await _httpClient.DeleteAsync(_url + '/' + id);
+            if (response.IsSuccessStatusCode)
+                Debug.WriteLine("DeleteCardByIdAsync : Successed");
+            else
+                Debug.WriteLine($"DeleteCardByIdAsync : {response.StatusCode}");
         }
         public async Task DeleteAllCardsAsync()
         {
-            await _httpClient.DeleteAsync(_url);
+            using HttpResponseMessage response = await _httpClient.DeleteAsync(_url);
+            if (response.IsSuccessStatusCode)
+                Debug.WriteLine("DeleteAllCardsAsync : Successed");
+            else
+                Debug.WriteLine($"DeleteAllCardsAsync : {response.StatusCode}");
         }
     }
 }

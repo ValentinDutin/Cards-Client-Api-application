@@ -15,7 +15,7 @@ namespace CardsClient
         public IConfiguration ConfigData { get; }
         public App()
         {
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+            var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: false);
             ConfigData = builder.Build();
         }

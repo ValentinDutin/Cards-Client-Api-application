@@ -19,7 +19,7 @@ namespace CardsServer.Data
         {   
             if(!File.Exists(_filePath))
             {
-                return new();
+                return [];
             }
             var json = await File.ReadAllTextAsync(_filePath);
             if(!String.IsNullOrEmpty(json))
@@ -31,7 +31,7 @@ namespace CardsServer.Data
             {
                 Console.WriteLine(ex.Message);
             }
-            return new();
+            return [];
         }
         public async Task<Card> GetCardByIdAsync(Guid id)
         {

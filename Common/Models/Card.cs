@@ -10,32 +10,22 @@ namespace Common.Models
         public Guid Id { get { return _id; } set { _id = value; } }
         public string Description
         {
-            get
-            {
-                return _description;
-            }
+            get => _description;
             set
             {
                 if (value == null)
-                {
                     return;
-                }
-                _description = value ?? "";
+                _description = value;
             }
         }
         public string ImgPath
         {
-            get
-            {
-                return _imgPath;
-            }
+            get => _imgPath;
             set
             {
                 if (value == null)
-                {
                     return;
-                }
-                _imgPath = value ?? "";
+                _imgPath = value;
             }
         }
         public Card() 
@@ -45,15 +35,11 @@ namespace Common.Models
         }
         public Card(string description, string imgPath)
         {
-                _description = description ?? "";
+            _description = description ?? "";
             if (imgPath != null)
-            {
                 _imgPath = imgPath ?? "";
-            }
             else
-            {
                 _imgPath = "";
-            }
         }
         public Card(Guid id, string description, string imgPath)
         {
@@ -63,8 +49,10 @@ namespace Common.Models
         }
         public static Card CreateCard(string description, string imgPath)
         {
-            Card card = new Card(description, imgPath);
-            card._id = Guid.NewGuid();
+            Card card = new Card(description, imgPath)
+            {
+                _id = Guid.NewGuid()
+            };
             return card;
         }
     }

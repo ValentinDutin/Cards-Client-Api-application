@@ -52,7 +52,7 @@ namespace CardsClient.ViewModels
         {
             _initImgPath = ((App)Application.Current).ConfigData["InitIconRelativePath"] ?? "\\Icons\\InitIcon.png";
             _httpClientService = httpClientService;
-            CardsCollection = new ObservableCollection<Card>();
+            CardsCollection = [];
             SubmitCommand = new AsyncRelayCommand(Submit);
             LoadDataCommand = new AsyncRelayCommand(LoadData);
             DeleteCardByIdCommand = new AsyncRelayCommand(DeleteById);

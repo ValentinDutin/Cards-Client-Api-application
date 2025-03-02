@@ -33,41 +33,73 @@ namespace CardsServer.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCardById(Guid id)
         {
-            var query = new GetCardByIdQuery(id);
-            var card = await _mediator.Send(query);
-            return Ok(card);
+            try
+            {
+                var query = new GetCardByIdQuery(id);
+                var card = await _mediator.Send(query);
+                return Ok(card);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpPost]
         public async Task<IActionResult> AddCard([FromBody] Card item)
         {
-            var command = new AddCardCommand(item);
-            await _mediator.Send(command);
-            _logger.LogInformation("Card is added sucessfully");
-            return Ok();
+            try
+            {
+                var command = new AddCardCommand(item);
+                await _mediator.Send(command);
+                _logger.LogInformation("Card is added sucessfully");
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCardById(Guid id)
         {
-            var command = new DeleteCardByIdCommand(id);
-            var isDeleted = await _mediator.Send(command);
-            if (isDeleted)
+            try
             {
-                _logger.LogInformation("Deleted Card By Id : " + id);
-                return Ok(isDeleted);
+                var command = new DeleteCardByIdCommand(id);
+                var isDeleted = await _mediator.Send(command);
+                if (isDeleted)
+                {
+                    _logger.LogInformation("Deleted Card By Id : " + id);
+                    return Ok(isDeleted);
+                }
+                _logger.LogError("Deleted card is not found");
+                return StatusCode(404);
             }
-            _logger.LogError("Deleted card is not found");
-            return StatusCode(404);
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [HttpDelete]
         public async Task<IActionResult> DeleteAllCards()
         {
-            var command = new DeleteAllCardsCommand();
-            await _mediator.Send(command);
-            _logger.LogInformation("Delete all cards");
-            return Ok();
+            try
+            {
+                var command = new DeleteAllCardsCommand();
+                await _mediator.Send(command);
+                _logger.LogInformation("Delete all cards");
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return StatusCode(500, ex.Message);
+            }
         }
     }
 }

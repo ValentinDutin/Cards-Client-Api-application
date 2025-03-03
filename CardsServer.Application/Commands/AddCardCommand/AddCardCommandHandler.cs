@@ -8,7 +8,7 @@ namespace CardsServer.Application.Commands.AddCardCommand
         private readonly CardsRepository _cardsRepository;
         public AddCardCommandHandler(CardsRepository cardsRepository)
         {
-            _cardsRepository = cardsRepository ?? throw new ArgumentNullException(nameof(cardsRepository));
+            _cardsRepository = cardsRepository;
         }
         public async Task<Unit> Handle(AddCardCommand request, CancellationToken cancellationToken)
         {

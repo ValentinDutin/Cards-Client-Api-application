@@ -9,7 +9,7 @@ namespace CardsServer.Application.Queries.GetCardsQuery
         private readonly CardsRepository _cardsRepository;
         public GetCardsQueryHandler(CardsRepository cardsRepository)
         {
-            _cardsRepository = cardsRepository ?? throw new ArgumentNullException(nameof(cardsRepository));
+            _cardsRepository = cardsRepository;
         }
         public async Task<List<Card>> Handle(GetCardsQuery request, CancellationToken cancellationToken)
         {

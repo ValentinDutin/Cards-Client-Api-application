@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Common.Models;
+using CommonFiles.Models;
 
 namespace CardsServer.Application.Commands.AddCardCommand
 {

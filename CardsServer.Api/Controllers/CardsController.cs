@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using Common.Models;
+using CommonFiles.Models;
 using CardsServer.Application.Queries.GetCardsQuery;
 using CardsServer.Application.Queries.GetCardByIdQuery;
 using CardsServer.Application.Commands.AddCardCommand;

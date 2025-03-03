@@ -1,20 +1,30 @@
-﻿using Common.Models;
+﻿using CommonFiles.Models;
+using CommonFiles.Services;
 using System.Text.Json;
 
 namespace CardsServer.Data
 {
     public class CardsRepository
     {
-        private readonly string _directoryName = "../DB";
-        private readonly string _filePath = "Cards.json";
-        public CardsRepository()
+        private readonly string _directoryName;
+        private readonly string _filePath;
+        public CardsRepository(IConfigDataService configDataService)
         {
-            _filePath = Path.Combine(_directoryName, _filePath);
-            if (!Directory.Exists(_directoryName))
+            try
             {
-                Directory.CreateDirectory(_directoryName);
+                _directoryName = configDataService.GetData("DbDirectoryRelativePath");
+                _filePath = configDataService.GetData("DbFileName");
+                _filePath = Path.Combine(_directoryName, _filePath);
+                if (!Directory.Exists(_directoryName))
+                {
+                    Directory.CreateDirectory(_directoryName);
+                }
             }
-        }
+            catch (Exception ex)
+            {
+                throw new Exception("CardsRepository : " + ex.Message);
+            }
+            }
         public async Task<List<Card>> GetCardsAsync()
         {   
             if(!File.Exists(_filePath))
@@ -25,11 +35,11 @@ namespace CardsServer.Data
             if(!String.IsNullOrEmpty(json))
             try
             {
-                return JsonSerializer.Deserialize<List<Card>>(json) ?? new();
+                return JsonSerializer.Deserialize<List<Card>>(json) ?? [];
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                throw new Exception(ex.Message);
             }
             return [];
         }
@@ -69,7 +79,7 @@ namespace CardsServer.Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
     }

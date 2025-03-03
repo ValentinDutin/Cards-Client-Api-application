@@ -6,25 +6,32 @@
         xmlns:local="clr-namespace:CardsClient"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-  <Grid>
-    <StackPanel>
-      <TextBox Width="200" Margin="10" Text="{Binding InputDescription, UpdateSourceTrigger=PropertyChanged}"/>
-      <Button Content="Select image" Width="100" Click="SelectImg_Click"/>
-      <Button Content="Submit" Width="100" Command="{Binding SubmitCommand}"/>
-      <Button Content="Delete element" Width="100" Command="{Binding DeleteCardByIdCommand}"/>
-      <Button Content="Delete All" Width="100" Command="{Binding DeleteAllCardsCommand}"/>
-      <ScrollViewer Name="scroll" CanContentScroll="True" MaxHeight="700">
-        <ListBox x:Name="cardsList" ItemsSource="{Binding CardsCollection}" SelectedItem="{Binding SelectedItem}">
-          <ListBox.ItemTemplate>
-            <DataTemplate>
-              <StackPanel>
-                <Image Source="{Binding ImgPath}" Width="200"/>
-                <TextBlock Text="{Binding Description}"/>
-              </StackPanel>
-            </DataTemplate>
-          </ListBox.ItemTemplate>
-        </ListBox>
-      </ScrollViewer>
-    </StackPanel>
-  </Grid>
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBox Width="200" Margin="10" Text="{Binding InputDescription, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Content="Select image" Width="100" Click="SelectImg_Click"/>
+            <Button Content="Submit" Width="100" Command="{Binding SubmitCommand}"/>
+            <Button Content="Delete element" Width="100" Command="{Binding DeleteCardByIdCommand}"/>
+            <Button Content="Delete All" Width="100" Command="{Binding DeleteAllCardsCommand}"/>
+        </StackPanel>
+            <ScrollViewer Grid.Row="1" Name="scroll" CanContentScroll="True">
+                <!--MaxHeight="700"-->
+                    <ListBox x:Name="cardsList" ItemsSource="{Binding CardsCollection}" SelectedItem="{Binding SelectedItem}">
+                        <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image Source="{Binding ImgPath}" Width="200"/>
+                            <TextBlock Text="{Binding Description}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+        <TextBlock Grid.Row="2" VerticalAlignment="Bottom" Text="{Binding StatusBar}" Margin="3"/>
+    </Grid>
 </Window>

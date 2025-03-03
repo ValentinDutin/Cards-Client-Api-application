@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System.Text;
 using System.Net.Http;
-using Common.Models;
+using CommonFiles.Models;
+using CommonFiles.Services;
 using System.Diagnostics;
 using System.Windows;
 
@@ -11,45 +12,93 @@ namespace CardsClient.Services
     {
         private readonly HttpClient _httpClient;
         private readonly string _url;
-        public HttpClientService(HttpClient? httpClient)
+        public HttpClientService(HttpClient httpClient, IConfigDataService configData)
         {
-            _httpClient = httpClient ?? new HttpClient();
-            _url = ((App)Application.Current).ConfigData["BaseUrl"] ?? "http://localhost:5110/api/cards";
+            try
+            {
+                _httpClient = httpClient;
+                _url = configData.GetData("BaseUrl");
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public async Task PostCardAsync(Card model)
         {
-            var json = JsonConvert.SerializeObject(model);
-            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-            using HttpResponseMessage response = await _httpClient.PostAsync(_url, httpContent);
-            if (response.IsSuccessStatusCode)
-                Debug.WriteLine("PostCardsAsync : Successed");
-            else
-                Debug.WriteLine($"PostCardsAsync : {response.StatusCode}");
+            try
+            {
+                var json = JsonConvert.SerializeObject(model);
+                var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+                using HttpResponseMessage response = await _httpClient.PostAsync(_url, httpContent);
+                if (response.IsSuccessStatusCode)
+                    Debug.WriteLine("PostCardsAsync : Successed");
+                else
+                {
+                    Debug.WriteLine($"PostCardsAsync : {response.StatusCode}");
+                    throw new Exception($"PostCardsAsync : {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public async Task<List<Card>> GetCardsAsync()
         {
-            using HttpResponseMessage response = await _httpClient.GetAsync(_url);
-            if (response.IsSuccessStatusCode)
-                Debug.WriteLine("GetCardsAsync : Successed");
-            else
-                Debug.WriteLine($"GetCardsAsync : {response.StatusCode}");
-            return JsonConvert.DeserializeObject<List<Card>>(await response.Content.ReadAsStringAsync()) ?? [];
+            try
+            {
+                using HttpResponseMessage response = await _httpClient.GetAsync(_url);
+                if (response.IsSuccessStatusCode)
+                    Debug.WriteLine("GetCardsAsync : Successed");
+                else
+                {
+                    Debug.WriteLine($"GetCardsAsync : {response.StatusCode}");
+                    throw new Exception($"GetCardsAsync : {response.StatusCode}");
+                }
+                return JsonConvert.DeserializeObject<List<Card>>(await response.Content.ReadAsStringAsync()) ?? [];
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("HttpClient class : " + ex.Message);
+                throw new Exception(ex.Message);
+            }
         }
         public async Task DeleteCardByIdAsync(Guid id)
         {
-            using HttpResponseMessage response = await _httpClient.DeleteAsync(_url + '/' + id);
-            if (response.IsSuccessStatusCode)
-                Debug.WriteLine("DeleteCardByIdAsync : Successed");
-            else
-                Debug.WriteLine($"DeleteCardByIdAsync : {response.StatusCode}");
+            try
+            {
+                using HttpResponseMessage response = await _httpClient.DeleteAsync(_url + '/' + id);
+                if (response.IsSuccessStatusCode)
+                    Debug.WriteLine("DeleteCardByIdAsync : Successed");
+                else
+                {
+                    Debug.WriteLine($"DeleteCardByIdAsync : {response.StatusCode}");
+                    throw new Exception($"DeleteCardByIdAsync : {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public async Task DeleteAllCardsAsync()
         {
-            using HttpResponseMessage response = await _httpClient.DeleteAsync(_url);
-            if (response.IsSuccessStatusCode)
-                Debug.WriteLine("DeleteAllCardsAsync : Successed");
-            else
-                Debug.WriteLine($"DeleteAllCardsAsync : {response.StatusCode}");
+            try
+            {
+                using HttpResponseMessage response = await _httpClient.DeleteAsync(_url);
+                if (response.IsSuccessStatusCode)
+                    Debug.WriteLine("DeleteAllCardsAsync : Successed");
+                else
+                {
+                    Debug.WriteLine($"DeleteAllCardsAsync : {response.StatusCode}");
+                    throw new Exception($"DeleteAllCardsAsync : {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

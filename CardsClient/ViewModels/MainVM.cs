@@ -1,10 +1,10 @@
 ﻿using System.Collections.ObjectModel;
-using Common.Models;
+using CommonFiles.Models;
+using CommonFiles.Services;
 using CommunityToolkit.Mvvm.Input;
 using System.IO;
 using System.Diagnostics;
 using CardsClient.Services;
-using System.Windows;
 
 namespace CardsClient.ViewModels
 {
@@ -15,12 +15,21 @@ namespace CardsClient.ViewModels
         private string? _description;
         private string? _imgPath;
         private Card? _selectedItem;
+        private string _statusBar;
         private IAsyncRelayCommand LoadDataCommand { get; }
         public ObservableCollection<Card> CardsCollection { get; private set; }
         public IAsyncRelayCommand SubmitCommand { get; set; }
         public IAsyncRelayCommand DeleteCardByIdCommand { get; set; }
         public IAsyncRelayCommand DeleteAllCardsCommand { get; set; }
-
+        public string StatusBar
+        {
+            get => _statusBar;
+            set
+            {
+                _statusBar = value;
+                OnPropertyChanged();
+            }
+        }
         public Card? SelectedItem
         {
             get => _selectedItem;
@@ -48,16 +57,25 @@ namespace CardsClient.ViewModels
                 OnPropertyChanged();
             }
         }
-        public MainVM(IHttpClientService httpClientService)
+        public MainVM(IHttpClientService httpClientService, IConfigDataService configDataService)
         {
-            _initImgPath = ((App)Application.Current).ConfigData["InitIconRelativePath"] ?? "\\Icons\\InitIcon.png";
-            _httpClientService = httpClientService;
-            CardsCollection = [];
-            SubmitCommand = new AsyncRelayCommand(Submit);
-            LoadDataCommand = new AsyncRelayCommand(LoadData);
-            DeleteCardByIdCommand = new AsyncRelayCommand(DeleteById);
-            DeleteAllCardsCommand = new AsyncRelayCommand(DeleteAllCards);
-            LoadDataCommand.Execute(this);
+            try
+            {
+                _initImgPath = configDataService.GetData("InitIconRelativePath");
+                _httpClientService = httpClientService;
+                _statusBar = "App running successfully";
+                CardsCollection = [];
+                SubmitCommand = new AsyncRelayCommand(Submit);
+                LoadDataCommand = new AsyncRelayCommand(LoadData);
+                DeleteCardByIdCommand = new AsyncRelayCommand(DeleteById);
+                DeleteAllCardsCommand = new AsyncRelayCommand(DeleteAllCards);
+                LoadDataCommand.Execute(this);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                PostExceptionInView(ex);
+            }
         }
         private async Task LoadData()
         {
@@ -72,6 +90,7 @@ namespace CardsClient.ViewModels
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
+                PostExceptionInView(ex);
             }
         }
         private async Task Submit()
@@ -88,6 +107,7 @@ namespace CardsClient.ViewModels
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
+                PostExceptionInView(ex);
             }
         }
         private async Task DeleteById()
@@ -103,12 +123,24 @@ namespace CardsClient.ViewModels
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
+                PostExceptionInView(ex);
             }
         }
         private async Task DeleteAllCards()
         {
-            await _httpClientService.DeleteAllCardsAsync();
-            CardsCollection.Clear();
+            try
+            {
+                await _httpClientService.DeleteAllCardsAsync();
+                CardsCollection.Clear();
+            }
+            catch (Exception ex)
+            {
+                PostExceptionInView(ex);
+            }
+        }
+        private void PostExceptionInView(Exception ex)
+        {
+            StatusBar = ex.Message;
         }
     }
 }

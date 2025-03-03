@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.IO;
 using System.Windows;
+using CommonFiles.Services;
 
 namespace CardsClient
 {
@@ -12,12 +13,8 @@ namespace CardsClient
     /// </summary>
     public partial class App : Application
     {
-        public IConfiguration ConfigData { get; }
         public App()
         {
-            var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: false);
-            ConfigData = builder.Build();
         }
         void App_Startup(object sender, StartupEventArgs e)
         {
@@ -25,6 +22,7 @@ namespace CardsClient
                 .AddHttpClient<IHttpClientService, HttpClientService>()
                 .Services
                 .AddSingleton<MainVM>()
+                .AddSingleton<IConfigDataService, ConfigDataService>()
                 .AddSingleton<IHttpClientService, HttpClientService>()
                 .BuildServiceProvider();
             var mainWindow = new MainWindow

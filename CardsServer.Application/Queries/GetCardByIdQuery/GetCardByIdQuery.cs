@@ -1,4 +1,4 @@
-﻿using Common.Models;
+﻿using CommonFiles.Models;
 using MediatR;
 
 namespace CardsServer.Application.Queries.GetCardByIdQuery

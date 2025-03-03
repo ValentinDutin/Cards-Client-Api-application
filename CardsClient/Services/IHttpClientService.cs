@@ -1,4 +1,4 @@
-﻿using Common.Models;
+﻿using CommonFiles.Models;
 
 namespace CardsClient.Services
 {

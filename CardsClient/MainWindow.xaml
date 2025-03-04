@@ -19,13 +19,13 @@
             <Button Content="Delete element" Width="100" Command="{Binding DeleteCardByIdCommand}"/>
             <Button Content="Delete All" Width="100" Command="{Binding DeleteAllCardsCommand}"/>
         </StackPanel>
-            <ScrollViewer Grid.Row="1" Name="scroll" CanContentScroll="True">
-                <!--MaxHeight="700"-->
-                    <ListBox x:Name="cardsList" ItemsSource="{Binding CardsCollection}" SelectedItem="{Binding SelectedItem}">
+        <ScrollViewer Grid.Row="1" Name="scroll" CanContentScroll="True">
+            <ListBox x:Name="cardsList" ItemsSource="{Binding CardsCollection}" SelectedItem="{Binding SelectedItem}">
                         <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
                             <Image Source="{Binding ImgPath}" Width="200"/>
+                            <TextBlock Text="{Binding Name}"/>
                             <TextBlock Text="{Binding Description}"/>
                         </StackPanel>
                     </DataTemplate>

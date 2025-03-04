@@ -121,3 +121,363 @@ Request GetCards is recieved
 Before execution for DeleteAllCardsCommand : 05.03.2025 0:31:35
 After execution for DeleteAllCardsCommand : 05.03.2025 0:31:35
 Delete all cards
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 0:53:40
+After execution for GetCardsQuery : 05.03.2025 0:53:41
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 0:53:44
+After execution for GetCardsQuery : 05.03.2025 0:53:44
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 0:53:52
+After execution for AddCardCommand : 05.03.2025 0:53:52
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 0:53:52
+After execution for GetCardsQuery : 05.03.2025 0:53:52
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 0:53:59
+After execution for AddCardCommand : 05.03.2025 0:53:59
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 0:53:59
+After execution for GetCardsQuery : 05.03.2025 0:53:59
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 0:54:02
+After execution for AddCardCommand : 05.03.2025 0:54:02
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 0:54:02
+After execution for GetCardsQuery : 05.03.2025 0:54:02
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 0:54:02
+After execution for AddCardCommand : 05.03.2025 0:54:02
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 0:54:02
+After execution for GetCardsQuery : 05.03.2025 0:54:02
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 0:54:02
+After execution for AddCardCommand : 05.03.2025 0:54:02
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 0:54:02
+After execution for GetCardsQuery : 05.03.2025 0:54:02
+Request GetCards is recieved
+Before execution for DeleteCardByIdCommand : 05.03.2025 0:54:08
+After execution for DeleteCardByIdCommand : 05.03.2025 0:54:08
+Deleted Card By Id : b7f03109-57b1-4ec7-9afd-8ba6f35e67d2
+Before execution for GetCardsQuery : 05.03.2025 0:54:08
+After execution for GetCardsQuery : 05.03.2025 0:54:08
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 0:54:14
+After execution for GetCardsQuery : 05.03.2025 0:54:14
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 1:00:17
+After execution for GetCardsQuery : 05.03.2025 1:00:17
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:00:17
+After execution for GetCardsQuery : 05.03.2025 1:00:17
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:00:31
+After execution for AddCardCommand : 05.03.2025 1:00:31
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:00:31
+After execution for GetCardsQuery : 05.03.2025 1:00:31
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:00:33
+After execution for GetCardsQuery : 05.03.2025 1:00:33
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:00:44
+After execution for AddCardCommand : 05.03.2025 1:00:44
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:00:44
+After execution for GetCardsQuery : 05.03.2025 1:00:44
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:00:46
+After execution for GetCardsQuery : 05.03.2025 1:00:46
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:01:18
+After execution for AddCardCommand : 05.03.2025 1:01:18
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:01:18
+After execution for GetCardsQuery : 05.03.2025 1:01:18
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 1:01:44
+Before execution for GetCardsQuery : 05.03.2025 1:01:44
+After execution for GetCardsQuery : 05.03.2025 1:01:45
+Request GetCards is recieved
+After execution for GetCardsQuery : 05.03.2025 1:01:45
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:01:58
+After execution for AddCardCommand : 05.03.2025 1:01:58
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:01:58
+After execution for GetCardsQuery : 05.03.2025 1:01:58
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:02:05
+After execution for GetCardsQuery : 05.03.2025 1:02:05
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 1:02:54
+After execution for GetCardsQuery : 05.03.2025 1:02:54
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:02:54
+After execution for GetCardsQuery : 05.03.2025 1:02:54
+Request GetCards is recieved
+Before execution for DeleteAllCardsCommand : 05.03.2025 1:02:58
+After execution for DeleteAllCardsCommand : 05.03.2025 1:02:58
+Delete all cards
+Before execution for AddCardCommand : 05.03.2025 1:03:07
+After execution for AddCardCommand : 05.03.2025 1:03:07
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:03:07
+After execution for GetCardsQuery : 05.03.2025 1:03:07
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:03:08
+After execution for AddCardCommand : 05.03.2025 1:03:08
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:03:08
+After execution for GetCardsQuery : 05.03.2025 1:03:08
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:03:11
+After execution for GetCardsQuery : 05.03.2025 1:03:11
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 1:05:18
+After execution for GetCardsQuery : 05.03.2025 1:05:18
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:05:18
+After execution for GetCardsQuery : 05.03.2025 1:05:18
+Request GetCards is recieved
+Before execution for DeleteAllCardsCommand : 05.03.2025 1:05:25
+After execution for DeleteAllCardsCommand : 05.03.2025 1:05:25
+Delete all cards
+Before execution for AddCardCommand : 05.03.2025 1:05:41
+After execution for AddCardCommand : 05.03.2025 1:05:41
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:05:41
+After execution for GetCardsQuery : 05.03.2025 1:05:41
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:05:43
+After execution for AddCardCommand : 05.03.2025 1:05:43
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:05:43
+After execution for GetCardsQuery : 05.03.2025 1:05:43
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:05:48
+After execution for GetCardsQuery : 05.03.2025 1:05:48
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 1:08:20
+After execution for GetCardsQuery : 05.03.2025 1:08:20
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:08:20
+After execution for GetCardsQuery : 05.03.2025 1:08:20
+Request GetCards is recieved
+Before execution for DeleteAllCardsCommand : 05.03.2025 1:08:23
+After execution for DeleteAllCardsCommand : 05.03.2025 1:08:23
+Delete all cards
+Before execution for AddCardCommand : 05.03.2025 1:08:31
+After execution for AddCardCommand : 05.03.2025 1:08:31
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:08:31
+After execution for GetCardsQuery : 05.03.2025 1:08:31
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:08:32
+After execution for AddCardCommand : 05.03.2025 1:08:32
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:08:32
+After execution for GetCardsQuery : 05.03.2025 1:08:32
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:08:32
+After execution for AddCardCommand : 05.03.2025 1:08:32
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:08:32
+After execution for GetCardsQuery : 05.03.2025 1:08:32
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:08:36
+After execution for GetCardsQuery : 05.03.2025 1:08:36
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:08:54
+After execution for AddCardCommand : 05.03.2025 1:08:54
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:08:54
+After execution for GetCardsQuery : 05.03.2025 1:08:54
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:09:01
+After execution for AddCardCommand : 05.03.2025 1:09:01
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:09:01
+After execution for GetCardsQuery : 05.03.2025 1:09:01
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:09:03
+After execution for AddCardCommand : 05.03.2025 1:09:04
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:09:04
+After execution for GetCardsQuery : 05.03.2025 1:09:04
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:09:04
+After execution for AddCardCommand : 05.03.2025 1:09:04
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:09:04
+After execution for GetCardsQuery : 05.03.2025 1:09:04
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 1:09:41
+After execution for GetCardsQuery : 05.03.2025 1:09:41
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:09:42
+After execution for GetCardsQuery : 05.03.2025 1:09:42
+Request GetCards is recieved
+Before execution for DeleteAllCardsCommand : 05.03.2025 1:09:45
+After execution for DeleteAllCardsCommand : 05.03.2025 1:09:45
+Delete all cards
+Before execution for AddCardCommand : 05.03.2025 1:09:55
+After execution for AddCardCommand : 05.03.2025 1:09:55
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:09:55
+After execution for GetCardsQuery : 05.03.2025 1:09:55
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:09:58
+After execution for AddCardCommand : 05.03.2025 1:09:58
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:09:58
+After execution for GetCardsQuery : 05.03.2025 1:09:58
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:10:03
+After execution for GetCardsQuery : 05.03.2025 1:10:03
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 1:18:53
+After execution for GetCardsQuery : 05.03.2025 1:18:53
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:18:54
+After execution for GetCardsQuery : 05.03.2025 1:18:54
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:19:08
+After execution for AddCardCommand : 05.03.2025 1:19:08
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:19:08
+After execution for GetCardsQuery : 05.03.2025 1:19:08
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 1:19:42
+After execution for GetCardsQuery : 05.03.2025 1:19:43
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:19:43
+After execution for GetCardsQuery : 05.03.2025 1:19:43
+Request GetCards is recieved
+Before execution for DeleteAllCardsCommand : 05.03.2025 1:19:47
+After execution for DeleteAllCardsCommand : 05.03.2025 1:19:47
+Delete all cards
+Before execution for AddCardCommand : 05.03.2025 1:19:54
+After execution for AddCardCommand : 05.03.2025 1:19:54
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:19:54
+After execution for GetCardsQuery : 05.03.2025 1:19:54
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:19:55
+After execution for AddCardCommand : 05.03.2025 1:19:55
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:19:55
+After execution for GetCardsQuery : 05.03.2025 1:19:55
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:19:59
+After execution for GetCardsQuery : 05.03.2025 1:19:59
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:20:14
+After execution for AddCardCommand : 05.03.2025 1:20:14
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:20:14
+After execution for GetCardsQuery : 05.03.2025 1:20:14
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:20:21
+After execution for AddCardCommand : 05.03.2025 1:20:21
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:20:21
+After execution for GetCardsQuery : 05.03.2025 1:20:21
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 1:21:32
+After execution for GetCardsQuery : 05.03.2025 1:21:32
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:21:33
+After execution for GetCardsQuery : 05.03.2025 1:21:34
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:21:41
+After execution for AddCardCommand : 05.03.2025 1:21:41
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:21:41
+After execution for GetCardsQuery : 05.03.2025 1:21:41
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 1:27:19
+After execution for GetCardsQuery : 05.03.2025 1:27:19
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:27:20
+After execution for GetCardsQuery : 05.03.2025 1:27:20
+Request GetCards is recieved
+Before execution for DeleteAllCardsCommand : 05.03.2025 1:27:23
+After execution for DeleteAllCardsCommand : 05.03.2025 1:27:23
+Delete all cards
+Before execution for AddCardCommand : 05.03.2025 1:27:31
+After execution for AddCardCommand : 05.03.2025 1:27:31
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:27:31
+After execution for GetCardsQuery : 05.03.2025 1:27:31
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 1:39:20
+After execution for GetCardsQuery : 05.03.2025 1:39:20
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:39:21
+After execution for GetCardsQuery : 05.03.2025 1:39:21
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:39:29
+After execution for AddCardCommand : 05.03.2025 1:39:29
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:39:29
+After execution for GetCardsQuery : 05.03.2025 1:39:29
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 1:39:56
+After execution for AddCardCommand : 05.03.2025 1:39:56
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 1:39:56
+After execution for GetCardsQuery : 05.03.2025 1:39:56
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 1:40:10
+After execution for GetCardsQuery : 05.03.2025 1:40:10
+Request GetCards is recieved

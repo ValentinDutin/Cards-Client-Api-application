@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardsServer.Api", "CardsSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonFiles", "CommonFiles\CommonFiles.csproj", "{0ACC8602-DA2E-48F2-8EA3-F2457D14C7F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardsServer.Api.FileLogger", "CardsServer.Api.FileLogger\CardsServer.Api.FileLogger.csproj", "{88654E66-DE1B-49BF-89CD-6C33885BAAE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0ACC8602-DA2E-48F2-8EA3-F2457D14C7F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ACC8602-DA2E-48F2-8EA3-F2457D14C7F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ACC8602-DA2E-48F2-8EA3-F2457D14C7F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88654E66-DE1B-49BF-89CD-6C33885BAAE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88654E66-DE1B-49BF-89CD-6C33885BAAE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88654E66-DE1B-49BF-89CD-6C33885BAAE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88654E66-DE1B-49BF-89CD-6C33885BAAE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

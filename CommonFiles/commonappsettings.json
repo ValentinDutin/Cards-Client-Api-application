@@ -2,5 +2,5 @@
   "BaseUrl": "http://localhost:5110/api/cards",
   "InitIconRelativePath": "\\Icons\\InitIcon.png",
   "DbDirectoryRelativePath": "../DB",
-  "DbFileName": "Cards.json"  
+  "DbFileName": "Cards.json"
 }

@@ -1,0 +1,123 @@
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\source\repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 04.03.2025 23:40:29
+After execution for GetCardsQuery : 04.03.2025 23:40:29
+Request GetCards is recieved
+Before execution for GetCardsQuery : 04.03.2025 23:40:31
+After execution for GetCardsQuery : 04.03.2025 23:40:31
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\source\repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 04.03.2025 23:41:42
+After execution for GetCardsQuery : 04.03.2025 23:41:42
+Request GetCards is recieved
+Before execution for GetCardsQuery : 04.03.2025 23:41:43
+After execution for GetCardsQuery : 04.03.2025 23:41:43
+Request GetCards is recieved
+Before execution for AddCardCommand : 04.03.2025 23:42:08
+After execution for AddCardCommand : 04.03.2025 23:42:08
+Card is added sucessfully
+Before execution for GetCardsQuery : 04.03.2025 23:42:08
+After execution for GetCardsQuery : 04.03.2025 23:42:08
+Request GetCards is recieved
+Before execution for DeleteCardByIdCommand : 04.03.2025 23:42:16
+After execution for DeleteCardByIdCommand : 04.03.2025 23:42:16
+Deleted Card By Id : 878e3bc6-f6d7-4aed-a319-f4caaaff91ea
+Before execution for GetCardsQuery : 04.03.2025 23:42:16
+After execution for GetCardsQuery : 04.03.2025 23:42:16
+Request GetCards is recieved
+Before execution for DeleteAllCardsCommand : 04.03.2025 23:42:19
+After execution for DeleteAllCardsCommand : 04.03.2025 23:42:19
+Delete all cards
+Before execution for AddCardCommand : 04.03.2025 23:42:31
+After execution for AddCardCommand : 04.03.2025 23:42:31
+Card is added sucessfully
+Before execution for GetCardsQuery : 04.03.2025 23:42:31
+After execution for GetCardsQuery : 04.03.2025 23:42:31
+Request GetCards is recieved
+Before execution for AddCardCommand : 04.03.2025 23:42:32
+After execution for AddCardCommand : 04.03.2025 23:42:32
+Card is added sucessfully
+Before execution for GetCardsQuery : 04.03.2025 23:42:32
+After execution for GetCardsQuery : 04.03.2025 23:42:32
+Request GetCards is recieved
+Before execution for AddCardCommand : 04.03.2025 23:42:32
+After execution for AddCardCommand : 04.03.2025 23:42:32
+Card is added sucessfully
+Before execution for GetCardsQuery : 04.03.2025 23:42:32
+After execution for GetCardsQuery : 04.03.2025 23:42:32
+Request GetCards is recieved
+Before execution for AddCardCommand : 04.03.2025 23:42:32
+After execution for AddCardCommand : 04.03.2025 23:42:32
+Card is added sucessfully
+Before execution for GetCardsQuery : 04.03.2025 23:42:32
+After execution for GetCardsQuery : 04.03.2025 23:42:32
+Request GetCards is recieved
+Before execution for AddCardCommand : 04.03.2025 23:42:32
+After execution for AddCardCommand : 04.03.2025 23:42:32
+Card is added sucessfully
+Before execution for GetCardsQuery : 04.03.2025 23:42:32
+After execution for GetCardsQuery : 04.03.2025 23:42:32
+Request GetCards is recieved
+Before execution for AddCardCommand : 04.03.2025 23:42:34
+After execution for AddCardCommand : 04.03.2025 23:42:34
+Card is added sucessfully
+Before execution for GetCardsQuery : 04.03.2025 23:42:34
+After execution for GetCardsQuery : 04.03.2025 23:42:34
+Request GetCards is recieved
+Before execution for DeleteCardByIdCommand : 04.03.2025 23:42:45
+After execution for DeleteCardByIdCommand : 04.03.2025 23:42:45
+Deleted Card By Id : cf3ca263-b0ce-4ad3-996c-9c8a5be1f26d
+Before execution for GetCardsQuery : 04.03.2025 23:42:45
+After execution for GetCardsQuery : 04.03.2025 23:42:45
+Request GetCards is recieved
+Before execution for DeleteAllCardsCommand : 04.03.2025 23:42:54
+After execution for DeleteAllCardsCommand : 04.03.2025 23:42:54
+Delete all cards
+Before execution for AddCardCommand : 04.03.2025 23:43:07
+After execution for AddCardCommand : 04.03.2025 23:43:07
+Card is added sucessfully
+Before execution for GetCardsQuery : 04.03.2025 23:43:07
+After execution for GetCardsQuery : 04.03.2025 23:43:07
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\source\repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 0:31:16
+After execution for GetCardsQuery : 05.03.2025 0:31:16
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 0:31:17
+After execution for GetCardsQuery : 05.03.2025 0:31:17
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 0:31:27
+After execution for AddCardCommand : 05.03.2025 0:31:27
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 0:31:27
+After execution for GetCardsQuery : 05.03.2025 0:31:27
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 0:31:28
+After execution for AddCardCommand : 05.03.2025 0:31:28
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 0:31:28
+After execution for GetCardsQuery : 05.03.2025 0:31:28
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 0:31:29
+After execution for AddCardCommand : 05.03.2025 0:31:29
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 0:31:29
+After execution for GetCardsQuery : 05.03.2025 0:31:29
+Request GetCards is recieved
+Before execution for DeleteCardByIdCommand : 05.03.2025 0:31:34
+After execution for DeleteCardByIdCommand : 05.03.2025 0:31:34
+Deleted Card By Id : a7d4b7d0-2abe-45ab-b089-0141bfc3f604
+Before execution for GetCardsQuery : 05.03.2025 0:31:34
+After execution for GetCardsQuery : 05.03.2025 0:31:34
+Request GetCards is recieved
+Before execution for DeleteAllCardsCommand : 05.03.2025 0:31:35
+After execution for DeleteAllCardsCommand : 05.03.2025 0:31:35
+Delete all cards

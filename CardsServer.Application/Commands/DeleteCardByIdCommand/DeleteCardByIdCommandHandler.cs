@@ -1,18 +1,18 @@
-﻿using CardsServer.Data;
+﻿using CardsServer.Data.Services;
 using MediatR;
 
 namespace CardsServer.Application.Commands.DeleteCardByIdCommand
 {
     public class DeleteCardByIdCommandHandler : IRequestHandler<DeleteCardByIdCommand, bool>
     {
-        private CardsRepository _cardsRepository;
-        public DeleteCardByIdCommandHandler(CardsRepository cardsRepository)
+        private readonly ICardRepository _cardRepository;
+        public DeleteCardByIdCommandHandler(ICardRepository cardRepository)
         {
-            _cardsRepository = cardsRepository;
+            _cardRepository = cardRepository;
         }
         public async Task<bool> Handle(DeleteCardByIdCommand request, CancellationToken cancellationToken)
         {
-            return await _cardsRepository.DeleteCardByIdAsync(request.Id);
+            return await _cardRepository.DeleteCardByIdAsync(request.Id);
         }
     }
 }

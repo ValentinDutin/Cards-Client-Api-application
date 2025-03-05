@@ -4,7 +4,7 @@ namespace CommonFiles.Services
 {
     public class ConfigDataService : IConfigDataService
     {
-        private IConfiguration _config;
+        private readonly IConfiguration _config;
         public ConfigDataService()
         {
             try

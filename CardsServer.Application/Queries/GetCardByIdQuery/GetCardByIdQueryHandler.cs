@@ -1,4 +1,4 @@
-﻿using CardsServer.Data;
+﻿using CardsServer.Data.Services;
 using CommonFiles.Models;
 using MediatR;
 
@@ -6,14 +6,14 @@ namespace CardsServer.Application.Queries.GetCardByIdQuery
 {
     public class GetCardByIdQueryHandler : IRequestHandler<GetCardByIdQuery, Card>
     {
-        private readonly CardsRepository _cardsRepository;
-        public GetCardByIdQueryHandler(CardsRepository cardsRepository)
+        private readonly ICardRepository _cardRepository;
+        public GetCardByIdQueryHandler(ICardRepository cardRepository)
         {
-            _cardsRepository = cardsRepository;
+            _cardRepository = cardRepository;
         }
         public async Task<Card> Handle(GetCardByIdQuery request, CancellationToken cancellationToken)
         {
-            return await _cardsRepository.GetCardByIdAsync(request.Id);
+            return await _cardRepository.GetCardByIdAsync(request.Id);
         }
     }
 }

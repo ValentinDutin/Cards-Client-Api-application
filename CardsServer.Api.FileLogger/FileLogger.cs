@@ -4,8 +4,8 @@ namespace CardsServer.Api.FileLogger
 {
     public class FileLogger : ILogger, IDisposable
     {
-        private string _filePath;
-        private static object _lock = new object();
+        private readonly string _filePath;
+        private static readonly Lock _lock = new();
         public FileLogger(string filePath)
         {
             _filePath = filePath;

@@ -59,8 +59,8 @@ namespace CardsClient.ViewModels
         }
         public MainVM(IHttpClientService httpClientService, IConfigDataService configDataService)
         {
-            try
-            {
+            //try
+            //{
                 _initImgPath = configDataService.GetData("InitIconRelativePath");
                 _httpClientService = httpClientService;
                 _statusBar = "App running successfully";
@@ -70,12 +70,12 @@ namespace CardsClient.ViewModels
                 DeleteCardByIdCommand = new AsyncRelayCommand(DeleteById);
                 DeleteAllCardsCommand = new AsyncRelayCommand(DeleteAllCards);
                 LoadDataCommand.Execute(this);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-                PostExceptionInView(ex);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Debug.WriteLine(ex.Message);
+            //    PostExceptionInView(ex);
+            //}
         }
         private async Task LoadData()
         {
@@ -100,6 +100,7 @@ namespace CardsClient.ViewModels
                 if (String.IsNullOrEmpty(SelectedImgPath) && String.IsNullOrEmpty(InputDescription))
                     return;
                 var item = Card.CreateCard(InputDescription, SelectedImgPath);
+                StatusBar = "Added card id : " + item.Id;
                 await _httpClientService.PostCardAsync(item);
                 CardsCollection.Clear();
                 await LoadData();

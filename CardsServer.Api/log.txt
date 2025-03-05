@@ -481,3 +481,620 @@ Request GetCards is recieved
 Before execution for GetCardsQuery : 05.03.2025 1:40:10
 After execution for GetCardsQuery : 05.03.2025 1:40:10
 Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 18:54:10
+An error occurred using the connection to database 'master' on server 'localhost'.
+An exception occurred while iterating over the results of a query for context type 'CardsServer.Data.Context.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - Цепочка сертификатов выпущена центром сертификации, не имеющим доверия.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): Цепочка сертификатов выпущена центром сертификации, не имеющим доверия.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.SNIWritePacket(PacketHandle packet, UInt32& sniError, Boolean canAccumulate, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WriteSni(Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WritePacket(Byte flushMode, Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParser.TdsLogin(SqlLogin rec, FeatureExtension requestedFeatures, SessionData recoverySessionData, FederatedAuthenticationFeatureExtensionData fedAuthFeatureExtensionData, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.Login(ServerInfo server, TimeoutTimer timeout, String newPassword, SecureString newSecurePassword, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:7824f4cd-8e52-4f94-9036-5c2654ab058c
+Error Number:-2146893019,State:0,Class:20
+After execution for GetCardsQuery : 05.03.2025 18:54:12
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 18:59:21
+Failed executing DbCommand (45ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+An exception occurred while iterating over the results of a query for context type 'CardsServer.Data.Context.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Cards'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c71b5cf1-0699-45c5-a9fe-9e74f1054d49
+Error Number:208,State:1,Class:16
+After execution for GetCardsQuery : 05.03.2025 18:59:23
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 19:23:28
+Failed executing DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+An exception occurred while iterating over the results of a query for context type 'CardsServer.Data.Context.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Cards'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f2bdc892-d992-4eb4-81a3-80cd4ac26ae8
+Error Number:208,State:1,Class:16
+After execution for GetCardsQuery : 05.03.2025 19:23:31
+Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+Applying migration '20250305162203_InitialCreate'.
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Cards] (
+    [Id] uniqueidentifier NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [ImgPath] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Cards] PRIMARY KEY ([Id])
+);
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250305162203_InitialCreate', N'9.0.2');
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 19:24:50
+Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:24:52
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Before execution for GetCardsQuery : 05.03.2025 19:26:10
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 19:26:11
+Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:26:12
+After execution for GetCardsQuery : 05.03.2025 19:26:12
+Request GetCards is recieved
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:26:18
+Executed DbCommand (36ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:26:19
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:26:19
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:26:19
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 19:26:21
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:26:21
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:26:32
+Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:26:32
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:26:32
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:26:32
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 19:26:35
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:26:35
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 19:28:29
+Before execution for GetCardsQuery : 05.03.2025 19:28:32
+Executed DbCommand (104ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+Executed DbCommand (70ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:28:33
+Request GetCards is recieved
+After execution for GetCardsQuery : 05.03.2025 19:28:33
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:28:50
+Executed DbCommand (21ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:28:50
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:28:50
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:28:50
+Request GetCards is recieved
+Before execution for DeleteCardByIdCommand : 05.03.2025 19:28:57
+Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+WHERE [c].[Id] = @__p_0
+Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p0;
+After execution for DeleteCardByIdCommand : 05.03.2025 19:28:58
+Deleted Card By Id : ab087d3b-0839-483d-bfb2-57dbfc752f7a
+Before execution for GetCardsQuery : 05.03.2025 19:28:58
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:28:58
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 19:29:00
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:29:00
+Request GetCards is recieved
+Before execution for DeleteCardByIdCommand : 05.03.2025 19:29:09
+Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+WHERE [c].[Id] = @__p_0
+Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p0;
+After execution for DeleteCardByIdCommand : 05.03.2025 19:29:09
+Deleted Card By Id : 4ea08a80-455d-4419-a9e7-c386cdb9fc40
+Before execution for GetCardsQuery : 05.03.2025 19:29:09
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:29:09
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 19:29:11
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:29:11
+Request GetCards is recieved
+Before execution for DeleteAllCardsCommand : 05.03.2025 19:29:17
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p0;
+After execution for DeleteAllCardsCommand : 05.03.2025 19:29:17
+Delete all cards
+Before execution for GetCardsQuery : 05.03.2025 19:29:19
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:29:19
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:29:23
+Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:29:23
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:29:23
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:29:23
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:29:24
+Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:29:24
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:29:24
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:29:24
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:29:36
+Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:29:36
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:29:36
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:29:36
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:29:39
+Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:29:39
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:29:39
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:29:39
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:29:48
+Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:29:48
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:29:48
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:29:48
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:29:56
+Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:29:56
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:29:56
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:29:56
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 19:30:03
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:30:03
+Request GetCards is recieved
+Before execution for DeleteAllCardsCommand : 05.03.2025 19:30:25
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p0;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p1;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p2;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p3;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p4;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p5;
+After execution for DeleteAllCardsCommand : 05.03.2025 19:30:25
+Delete all cards
+Before execution for AddCardCommand : 05.03.2025 19:30:44
+Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:30:44
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:30:44
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:30:44
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:30:59
+Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:30:59
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:30:59
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:30:59
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:31:11
+Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:31:11
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:31:11
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:31:11
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:31:15
+Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:31:15
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:31:15
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:31:15
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:31:24
+Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:31:24
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:31:24
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:31:24
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 19:31:39
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:31:39
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 19:38:26
+Executed DbCommand (55ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:38:28
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 19:38:29
+Executed DbCommand (47ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:38:29
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 19:39:22
+Before execution for GetCardsQuery : 05.03.2025 19:39:25
+Executed DbCommand (74ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+Executed DbCommand (74ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:39:26
+After execution for GetCardsQuery : 05.03.2025 19:39:26
+Request GetCards is recieved
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:39:36
+Executed DbCommand (35ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:39:36
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:39:36
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:39:36
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 19:39:44
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:39:44
+Request GetCards is recieved
+Before execution for DeleteCardByIdCommand : 05.03.2025 19:39:56
+Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+WHERE [c].[Id] = @__p_0
+Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p0;
+After execution for DeleteCardByIdCommand : 05.03.2025 19:39:56
+Deleted Card By Id : 3de902ac-b44a-4179-92ec-3385e1534843
+Before execution for GetCardsQuery : 05.03.2025 19:39:56
+Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:39:56
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 19:39:59
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:39:59
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:40:12
+Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:40:12
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:40:12
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:40:12
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 19:40:22
+Executed DbCommand (32ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 19:40:22
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 19:40:22
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:40:22
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 19:40:24
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:40:24
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 19:47:48
+Before execution for GetCardsQuery : 05.03.2025 19:47:49
+Executed DbCommand (58ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+Executed DbCommand (58ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:47:51
+After execution for GetCardsQuery : 05.03.2025 19:47:51
+Request GetCards is recieved
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 19:48:00
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 19:48:00
+Request GetCards is recieved

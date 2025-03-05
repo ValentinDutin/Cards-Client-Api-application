@@ -1,10 +1,8 @@
-﻿using Newtonsoft.Json;
-using System.Text;
-using System.Net.Http;
+﻿using System.Net.Http;
 using CommonFiles.Models;
 using CommonFiles.Services;
 using System.Diagnostics;
-using System.Windows;
+using System.Net.Http.Json;
 
 namespace CardsClient.Services
 {
@@ -28,9 +26,7 @@ namespace CardsClient.Services
         {
             try
             {
-                var json = JsonConvert.SerializeObject(model);
-                var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-                using HttpResponseMessage response = await _httpClient.PostAsync(_url, httpContent);
+                using HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Card>(_url, model);
                 if (response.IsSuccessStatusCode)
                     Debug.WriteLine("PostCardsAsync : Successed");
                 else
@@ -56,7 +52,7 @@ namespace CardsClient.Services
                     Debug.WriteLine($"GetCardsAsync : {response.StatusCode}");
                     throw new Exception($"GetCardsAsync : {response.StatusCode}");
                 }
-                return JsonConvert.DeserializeObject<List<Card>>(await response.Content.ReadAsStringAsync()) ?? [];
+                return await response.Content.ReadFromJsonAsync<List<Card>>() ?? [];
             }
             catch (Exception ex)
             {

@@ -1098,3 +1098,174 @@ SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
 FROM [Cards] AS [c]
 After execution for GetCardsQuery : 05.03.2025 19:48:00
 Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 20:12:51
+Before execution for GetCardsQuery : 05.03.2025 20:12:53
+Executed DbCommand (65ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+Executed DbCommand (65ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:12:54
+After execution for GetCardsQuery : 05.03.2025 20:12:54
+Request GetCards is recieved
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 20:13:09
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:13:09
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 20:21:33
+Executed DbCommand (52ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:21:34
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 20:21:34
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:21:34
+Request GetCards is recieved
+Before execution for DeleteAllCardsCommand : 05.03.2025 20:21:42
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+Executed DbCommand (42ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p0;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p1;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p2;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p3;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p4;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p5;
+DELETE FROM [Cards]
+OUTPUT 1
+WHERE [Id] = @p6;
+After execution for DeleteAllCardsCommand : 05.03.2025 20:21:42
+Delete all cards
+Before execution for GetCardsQuery : 05.03.2025 20:21:45
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:21:45
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 20:21:46
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:21:46
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 20:21:51
+Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 20:21:51
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 20:21:51
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:21:51
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 20:22:00
+Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 20:22:00
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 20:22:00
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:22:00
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 20:22:04
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:22:04
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 20:24:02
+Executed DbCommand (48ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:24:03
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 20:24:04
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:24:04
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 20:24:11
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:24:11
+Request GetCards is recieved
+Now listening on: http://localhost:5110
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\77611\Source\Repos\Cards-Client-Api-application\CardsServer.Api
+Before execution for GetCardsQuery : 05.03.2025 20:25:32
+Executed DbCommand (246ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+Before execution for GetCardsQuery : 05.03.2025 20:25:34
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:25:34
+After execution for GetCardsQuery : 05.03.2025 20:25:34
+Request GetCards is recieved
+Request GetCards is recieved
+Before execution for AddCardCommand : 05.03.2025 20:25:47
+Executed DbCommand (26ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Cards] ([Id], [Description], [ImgPath], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+After execution for AddCardCommand : 05.03.2025 20:25:48
+Card is added sucessfully
+Before execution for GetCardsQuery : 05.03.2025 20:25:48
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:25:48
+Request GetCards is recieved
+Before execution for GetCardsQuery : 05.03.2025 20:25:58
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[ImgPath], [c].[Name]
+FROM [Cards] AS [c]
+After execution for GetCardsQuery : 05.03.2025 20:25:58
+Request GetCards is recieved

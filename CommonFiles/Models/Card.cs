@@ -1,4 +1,6 @@
-﻿namespace CommonFiles.Models
+﻿using MassTransit;
+
+namespace CommonFiles.Models
 {
     public class Card
     {
@@ -65,7 +67,7 @@
         {
             Card card = new(description, imgPath)
             {
-                _id = Guid.NewGuid()
+                _id = NewId.NextGuid()
             };
             return card;
         }

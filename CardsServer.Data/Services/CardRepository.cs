@@ -13,7 +13,14 @@ namespace CardsServer.Data.Services
         }
         public async Task<List<Card>> GetCardsAsync()
         {
-            return await _appDbContext.Cards.ToListAsync() ?? [];
+            try
+            {
+                return await _appDbContext.Cards.ToListAsync() ?? [];
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public async Task AddCardAsync(Card item)
         {

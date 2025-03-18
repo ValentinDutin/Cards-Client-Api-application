@@ -13,7 +13,14 @@ namespace CardsServer.Application.Queries.GetCardsQuery
         }
         public async Task<List<Card>> Handle(GetCardsQuery request, CancellationToken cancellationToken)
         {
-            return await _cardRepository.GetCardsAsync();
+            try
+            {
+                return await _cardRepository.GetCardsAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

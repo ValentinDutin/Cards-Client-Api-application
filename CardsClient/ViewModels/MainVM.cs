@@ -16,6 +16,9 @@ namespace CardsClient.ViewModels
         private string? _imgPath;
         private Card? _selectedItem;
         private string _statusBar;
+        private long _ping;
+        private Stopwatch _pingTimer;
+        private bool _pingCanChanged;
         private IAsyncRelayCommand LoadDataCommand { get; }
         public ObservableCollection<Card> CardsCollection { get; private set; }
         public IAsyncRelayCommand SubmitCommand { get; set; }
@@ -57,6 +60,15 @@ namespace CardsClient.ViewModels
                 OnPropertyChanged();
             }
         }
+        public long Ping
+        {
+            get => _ping;
+            set
+            {
+                _ping = value;
+                OnPropertyChanged();
+            }
+        }
         public MainVM(IHttpClientService httpClientService, IConfigDataService configDataService)
         {
             try
@@ -64,6 +76,9 @@ namespace CardsClient.ViewModels
                 _initImgPath = configDataService.GetData("InitIconRelativePath");
                 _httpClientService = httpClientService;
                 _statusBar = "App running successfully";
+                _ping = 0;
+                _pingTimer = new();
+                _pingCanChanged = true;
                 CardsCollection = [];
                 SubmitCommand = new AsyncRelayCommand(Submit);
                 LoadDataCommand = new AsyncRelayCommand(LoadData);
@@ -81,7 +96,18 @@ namespace CardsClient.ViewModels
         {
             try
             {
-                var list = await _httpClientService.GetCardsAsync();
+                if (_pingCanChanged)
+                {
+                    _pingTimer.Restart();
+                }
+                    var list = await _httpClientService.GetCardsAsync();
+                if (_pingCanChanged)
+                {
+                    _pingTimer.Stop();
+                    Ping = _pingTimer.ElapsedMilliseconds;
+                }
+                else
+                    _pingCanChanged = true;
                 foreach (var item in list)
                 {
                     CardsCollection.Add(new Card(item.Id, item.Description, File.Exists(item.ImgPath) ? item.ImgPath : _initImgPath));
@@ -101,8 +127,12 @@ namespace CardsClient.ViewModels
                     return;
                 var item = Card.CreateCard(InputDescription, SelectedImgPath);
                 StatusBar = "Added card id : " + item.Id;
+                _pingTimer.Restart();
                 await _httpClientService.PostCardAsync(item);
+                _pingTimer.Stop();
+                Ping = _pingTimer.ElapsedMilliseconds;
                 CardsCollection.Clear();
+                _pingCanChanged = false;
                 await LoadData();
             }
             catch (Exception ex)
@@ -117,8 +147,12 @@ namespace CardsClient.ViewModels
             {
                 if (SelectedItem == null)
                 { return; }
+                _pingTimer.Restart();
                 await _httpClientService.DeleteCardByIdAsync(SelectedItem.Id);
+                _pingTimer.Stop();
+                Ping = _pingTimer.ElapsedMilliseconds;
                 CardsCollection.Clear();
+                _pingCanChanged = false;
                 await LoadData();
             }
             catch (Exception ex)
@@ -131,7 +165,10 @@ namespace CardsClient.ViewModels
         {
             try
             {
+                _pingTimer.Restart();
                 await _httpClientService.DeleteAllCardsAsync();
+                _pingTimer.Stop();
+                Ping = _pingTimer.ElapsedMilliseconds;
                 CardsCollection.Clear();
             }
             catch (Exception ex)

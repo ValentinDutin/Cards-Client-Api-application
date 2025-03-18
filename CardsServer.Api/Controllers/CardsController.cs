@@ -24,10 +24,17 @@ namespace CardsServer.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCards()
         {
-            var query = new GetCardsQuery();
-            var cards = await _mediator.Send(query);
-            _logger.LogInformation("Request GetCards is recieved");
-            return Ok(cards);
+            try
+            {
+                var query = new GetCardsQuery();
+                var cards = await _mediator.Send(query);
+                _logger.LogInformation("Request GetCards is recieved");
+                return Ok(cards);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("{id}")]

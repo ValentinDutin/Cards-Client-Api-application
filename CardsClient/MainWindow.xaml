@@ -21,7 +21,7 @@
         </StackPanel>
         <ScrollViewer Grid.Row="1" Name="scroll" CanContentScroll="True">
             <ListBox x:Name="cardsList" ItemsSource="{Binding CardsCollection}" SelectedItem="{Binding SelectedItem}">
-                        <ListBox.ItemTemplate>
+                <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
                             <Image Source="{Binding ImgPath}" Width="200"/>
@@ -30,8 +30,12 @@
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-                    </ListBox>
-                </ScrollViewer>
-        <TextBlock Grid.Row="2" VerticalAlignment="Bottom" Text="{Binding StatusBar}" Margin="3"/>
+            </ListBox>
+        </ScrollViewer>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Bottom" Text="{Binding Ping}" Margin="3"/>
+            <TextBlock VerticalAlignment="Bottom" Text="{Binding StatusBar}" Margin="3"/>
+        </StackPanel>
+        
     </Grid>
 </Window>
